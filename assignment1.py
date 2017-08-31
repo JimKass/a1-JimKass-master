@@ -2,44 +2,49 @@
 Replace the contents of this module docstring with your own details.
 """
 #   TODO: What he said
-#   TODO: Set up github for this project
+"""
+    TEMP_FILE_NAME = temp.csv
+    SONG_FILE_NAME = songs.csv
+"""
 
 
-def main():
-    MENU = """Menu:
+"""
+function main()
+    MENU = "Menu:
     L - List songs
     A - Add new song
     C - Complete a song
-    Q - Quit"""
-    SONG_FILE_NAME = "songs.csv"
-    TEMP_FILE_NAME = "temp.csv"
+    Q - Quit"
+    song_file, temp_file = load_songs()
     keep_going = True
-#    song_file = open(SONG_FILE_NAME, "r")
-#    temp_file = open(TEMP_FILE_NAME, "a")
-    print("Songs To Learn 1.0 - by James Kastner")
-    while keep_going:
-        print(MENU)
-        action = input(">>> ")
-        #   TODO: send to get_valid_string function instead
-        if action.lower == 'l' or 'list' or '1' or 'list songs':
-            display_song_list(SONG_FILE_NAME)
-        elif action == 'a':
-            add_a_song()
-        elif action == 'c':
-            complete_a_song()
-        elif action == 'q':
-            keep_going = False
-#            song_file.close()
-#            temp_file.close()
-        else:
-            print("Invalid Input")
+    display "Songs To Learn 1.0 - by James Kastner"
+    display MENU
+    action = get_valid_string
+    if action == "l"
+        
+    otherwise if action == "a"
+    
+    otherwise if action == "c"
+    
+    otherwise if action == "q"
+    
+    otherwise
+        display "Invalid menu choice"
+    
+"""
+
+
+def main():
+    """
+    
+    :return: 
+    """
+
 
 """
-define function named load_songs()
-    TEMP_FILE_NAME = temp.csv
-    SONG_FILE_NAME = songs.csv
-    song_file = open songs.csv as read only
-    temp_file = open temp.csv as write only
+function named load_songs()
+    song_file = open SONG_FILE_NAME as read only
+    temp_file = open TEMP_FILE_NAME as write only
     write song_file to temp_file
     return song_file, temp_file
 """
@@ -53,7 +58,7 @@ def load_songs():
 
 
 """
-define function get_valid_string():
+function get_valid_string():
     
 """
 #   TODO: Pseudocode for this function
@@ -66,15 +71,15 @@ def get_valid_string(prompt):
     """
 
 """
-define function get_valid_integer() with parameter prompt
+function get_valid_integer(prompt)
     is_valid = False
     while is_valid = False
-        try to execute the code
+        try to execute:
             display prompt to the user
             number = get input from the user
             convert number into integer type
             is_valid = True
-        if a Value Error occurs, execute
+        if a ValueError occurs, execute
             display "Invalid Input, please enter a number"
     return number
 """
@@ -87,60 +92,67 @@ def get_valid_integer(prompt):
     """
 
 """
-define function display_song_list()
-    
+function display_song_list(song_file)
+    file_content = contents of song_file
+    count = 0
+    completed_count = 0
+    for line in file_content
+        line_sections = split line on comma and strip of whitespace
+        if line_sections[3] == "y"
+            completed_mark = "*"
+            completed_count += 1
+        otherwise
+            complete_mark = ""
+        display count. complete_mark line_section[0] - line_section[1] (line_section[2])
+        count += 1
+    display (completed-count) songs learned, (count - complete_count) songs still to learn
 """
-#   TODO: Pseudocode for display_song_list function
+#   TODO: sort by artist and title
 
-
-def display_song_list(file_name):
+def display_song_list(song_file):
     """
     This function will take a string consisting of the contents of the songs file and format and print it.
     :return: None
     """
-    file = open(file_name, "r")
-    file_content = file.readlines()
-    count = 0
-    for line in file_content:
-        line_sections = line.split(',')
-        if line_sections[3].lower == "y":
-            completed_mark = "*"
-        else:
-            completed_mark = " "
-        print("{:2i}. {:1s} {:15s} - {:15s} ({:4s})".format(count, completed_mark, line_sections[0], line_sections[1], line_sections[2]))
-        #   TODO: Shorten this line if possible
-        count += 1
-    file.close()
-    #   TODO: Find a way to write the number of songs
+
 
 """
-define function add_a_song():
-    is_valid = False
-    while not is_valid:
-        song_name = input("Title: ")
-        is_valid = True
-    is_valid = False
-    while not is_valid:
-        song_artist = input("Artist: ")
-        is_valid = True
-    is_valid = False
-    while not is_valid:
-        song_year = get input from the user with prompt "Year: "
-        is_valid = False
-    return = [song_name, song_artist, song_year]
+function add_a_song():
+    display "Title: "
+    get song_name
+    while song_name == "":
+        display "Input can not be blank"
+        display "Title: "
+        get song_name
+        
+    display "Artist: "
+    get song_artist
+    while song_artist == "":
+        display "Input can not be blank"
+        display "Artist: "
+        get song_artist
+    display "Year: "
+    get song_year
+    while song_year == "":
+        display "Input can not be blank"
+        display "Year: "
+        get song_year
+    add song to song_file (format: song_name, song_artist, song_year, "n")
 """
 
 
 def add_a_song():
     """
-    This function will get the name of the song, the artist's name and the year of release and will return that information in a list.
+    This function will get the relevant details of the song and will return that information in a list.
     :return: list
     """
-    #   TODO: Shorten this docstring
 
 
 """
-    song_number = input("Enter the number of the song to mark as learned")
+function complete_a_song() 
+    display "Enter the number of the song to mark as learned")
+    song_number = get_valid_number()
+    
 """
 #   TODO: All of this
 
